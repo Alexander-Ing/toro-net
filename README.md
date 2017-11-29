@@ -24,7 +24,19 @@ $ npm install
 
 Additionally, you will need to install Neo4j as well as Java 8 in order to run Toro-net. 
 
-## Customizations
+## Neo4j
+
+Install Java 8, neo4j, python
+
+Start neo4j:
+```bash
+$ sudo neo4j start
+```
+If first time starting neo4j, open web gui to set password. 
+To do so open web browser and navigate to and enter new password when prompted:
+```
+http://localhost:7474
+```
 
 Update your environment settings by creating a file `.env` as below:
 
@@ -38,8 +50,9 @@ NEO4J_PROTOCOL=http
 NEO4J_HOST=127.0.0.1
 NEO4J_PORT=7474
 NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=neo4j
+NEO4J_PASSWORD=<your password>
 ```
+
 ---
 ## Virtual Box Setup Instructions
 ### To use Vagrant, get started [here](#vagrant-setup-instructions)

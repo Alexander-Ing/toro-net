@@ -254,20 +254,25 @@ module.exports = (() => {
       const query = apoc.query(queryString)
 
       query.exec().then((result) => {
-        const resultArray = []
-        const dataLength = result[0]['data'][0]['row'][0].length
-        for (var i = 0; i < dataLength; i++) {
-          if(JSON.stringify(result[0]['data'][0]['row'][0][i]).search('username') != -1) {
-            resultArray.push(result[0]['data'][0]['row'][0][i])
+        if(result[0]['data'][0] == null) {
+          res.json({})
+        } else {
+          const resultArray = []
+          const dataLength = result[0]['data'][0]['row'][0].length
+          for (var i = 0; i < dataLength; i++) {
+            if(JSON.stringify(result[0]['data'][0]['row'][0][i]).search('username') != -1) {
+              resultArray.push(result[0]['data'][0]['row'][0][i])
+            }
           }
-        }
-        console.log(resultArray)
-        res.json({
-          'data': resultArray,
-          'length': dataLength
-        })
+          console.log(resultArray)
+          res.json({
+            'data': resultArray,
+            'length': dataLength
+          })
+        } 
       }, (fail) => {
         console.log(fail)
+        res.json({})
       })
     })
     

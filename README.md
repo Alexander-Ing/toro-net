@@ -33,7 +33,7 @@ Start neo4j:
 $ sudo neo4j start
 ```
 If first time starting neo4j, open web gui to set password. 
-To do so open web browser and navigate to and enter new password when prompted:
+To do so open web browser, enter the following in address bar and enter new password when prompted:
 ```
 http://localhost:7474
 ```

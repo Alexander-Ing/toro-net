@@ -26,8 +26,6 @@ Additionally, you will need to install Neo4j as well as Java 8 in order to run T
 
 ## Neo4j
 
-Install Java 8, neo4j, python
-
 Start neo4j:
 ```bash
 $ sudo neo4j start
